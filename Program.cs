@@ -124,3 +124,41 @@
 // char nameFirstLetter = name[0];
 // Console.WriteLine($"{surname} {nameFirstLetter}.");
 
+Console.WriteLine();
+Console.WriteLine("TryParse для трёх типов");
+
+Console.Write("Введите целое число: ");
+string intInput = Console.ReadLine();
+
+bool intSuccess = int.TryParse(
+    intInput,
+    out int intValue
+);
+
+Console.WriteLine(
+    $"Целое число: успешно = {intSuccess}, значение = {intValue}"
+);
+
+Console.Write("Введите дробное число: ");
+string doubleInput = Console.ReadLine();
+
+bool doubleSuccess = double.TryParse(
+    doubleInput,
+    out double doubleValue
+);
+
+Console.WriteLine(
+    $"Дробное число: успешно = {doubleSuccess}, значение = {doubleValue}"
+);
+
+Console.Write("Введите дату (дд.мм.гггг): ");
+string dateInput = Console.ReadLine();
+
+bool dateSuccess = DateTime.TryParse(
+    dateInput,
+    out DateTime dateValue
+);
+
+Console.WriteLine(
+    $"Дата: успешно = {dateSuccess}, значение = {dateValue}"
+);
